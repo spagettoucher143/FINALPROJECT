@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
 public class Board extends Canvas implements KeyListener, Runnable
 {
 
-	private Catcher ship;
+	private Catcher catches;
 	private ArrayList <Bomb> ast;
 	private int chance = 980000;
 
@@ -46,7 +46,7 @@ public class Board extends Canvas implements KeyListener, Runnable
 		keys = new boolean[6];
 		
 		rand = new Random();
-		ship = new Catcher(500,400,3);
+		catches = new Catcher(500,400,3);
 		ast = new ArrayList<Bomb>();
 		
 		frt = new ArrayList<Fruit>();
@@ -79,15 +79,9 @@ public class Board extends Canvas implements KeyListener, Runnable
 		
 		
 		if(game == 0){
+			b = new Background(0);
 			b.draw(graphToBack);
-			
-			
-			
-			
-			
-			
-			
-
+			System.out.println("test");
 			if (keys[5] == true){
 				game = 1;
 			}
@@ -102,7 +96,7 @@ public class Board extends Canvas implements KeyListener, Runnable
 			graphToBack.drawString("SCORE: " + score,25,110);
 
 	
-			ship.draw(graphToBack);
+			catches.draw(graphToBack);
 			
 			//BOMB GENERATION
 			long current = System.currentTimeMillis();
@@ -125,7 +119,7 @@ public class Board extends Canvas implements KeyListener, Runnable
 					break;
 				}
 				ast.get(i).draw(graphToBack);
-				if (ship.cTop(ast.get(i)) || ship.cBottom(ast.get(i)) || ship.cRight(ast.get(i)) || ship.cLeft(ast.get(i))){
+				if (catches.cTop(ast.get(i)) || catches.cBottom(ast.get(i)) || catches.cRight(ast.get(i)) || catches.cLeft(ast.get(i))){
 					ast.get(i).setPos(1000, 1000);
 					lives--;
 				}
@@ -144,7 +138,7 @@ public class Board extends Canvas implements KeyListener, Runnable
 					break;
 				}
 				hrt.get(i).draw(graphToBack);
-				if (ship.chTop(hrt.get(i)) || ship.chBottom(hrt.get(i))){
+				if (catches.chTop(hrt.get(i)) || catches.chBottom(hrt.get(i))){
 					hrt.get(i).setPos(1000, 1000);
 					lives++;
 				}
@@ -161,45 +155,46 @@ public class Board extends Canvas implements KeyListener, Runnable
 					break;
 				}
 				frt.get(i).draw(graphToBack);
-				if (ship.cfTop(frt.get(i)) || ship.cfBottom(frt.get(i))){
+				if (catches.cfTop(frt.get(i)) || catches.cfBottom(frt.get(i))){
 					frt.get(i).setPos(1000, 1000);
 					score++;
 				}
 			}
 	
-		//KEEPING SHIP IN BOUNDS
-		if (ship.getX() < 0){
-			ship.setX(0);
+		//KEEPING catches IN BOUNDS
+		if (catches.getX() < 0){
+			catches.setX(0);
 		}
-		if (ship.getX() > 760){
-			ship.setX(760);
+		if (catches.getX() > 760){
+			catches.setX(760);
 		}
-		if (ship.getY() < 0){
-			ship.setY(0);
+		if (catches.getY() < 0){
+			catches.setY(0);
 		}
-		if (ship.getY() > 545){
-			ship.setY(545);
+		if (catches.getY() > 545){
+			catches.setY(545);
 		}
 		
-		//SHIP EXPLODED
+		//CATCHER EXPLODED
 		if (lives == 0){
-			ship.explode();
+			catches.explode();
 		}
 		
-		//SHIP MOVEMENT
+		//CATCHER MOVEMENT
 		if(keys[1] == true)
 		{
-			ship.move("A");
+			catches.move("A");
 		}
 		if(keys[3] == true)
 		{
-			ship.move("D");
+			catches.move("D");
 		}
 		
 		
 		
+		
+		}
 		twoDGraph.drawImage(back, null, 0, 0);
-		}
 	}
 	
 
