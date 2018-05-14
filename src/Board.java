@@ -82,12 +82,12 @@ public class Board extends Canvas implements KeyListener, Runnable
 			b.draw(graphToBack);
 			graphToBack.setColor(Color.WHITE);
 			graphToBack.setFont(new Font("Helvetica", Font.PLAIN, 45));
-			graphToBack.drawString("ASTEROID",300,240);
+			graphToBack.drawString("FRUIT CATCHER",300,240);
 			graphToBack.setFont(new Font("Helvetica", Font.PLAIN, 12));
 			graphToBack.drawString("How To Play:", 250, 290);
-			graphToBack.drawString("WASD to move the ship", 260, 320);
-			graphToBack.drawString("ENTER to shoot lasers", 260, 340);
-			graphToBack.drawString("Avoid colliding with asteroids", 260, 360);
+			graphToBack.drawString("WASD to move the basket", 260, 320);
+			
+			graphToBack.drawString("Avoid hitting any bombs", 260, 360);
 			graphToBack.drawString("PRESS SPACE TO BEGIN", 260, 380);
 
 			if (keys[5] == true){
