@@ -85,7 +85,7 @@ public class Board extends Canvas implements KeyListener, Runnable
 			graphToBack.drawString("FRUIT CATCHER",300,240);
 			graphToBack.setFont(new Font("Helvetica", Font.PLAIN, 12));
 			graphToBack.drawString("How To Play:", 250, 290);
-			graphToBack.drawString("WASD to move the basket", 260, 320);
+			graphToBack.drawString("AD to move the basket", 260, 320);
 			
 			graphToBack.drawString("Avoid hitting any bombs", 260, 360);
 			graphToBack.drawString("PRESS SPACE TO BEGIN", 260, 380);
