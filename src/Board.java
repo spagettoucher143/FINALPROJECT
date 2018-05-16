@@ -22,7 +22,7 @@ public class Board extends Canvas implements KeyListener, Runnable
 
 	private Catcher catches;
 	private ArrayList <Bomb> ast;
-	private int chance = 980000;
+	private int chance = 970000;
 
 	private ArrayList<Fruit> frt;
 	private ArrayList<Heart> hrt;
@@ -184,9 +184,15 @@ public class Board extends Canvas implements KeyListener, Runnable
 		if(keys[1] == true)
 		{
 			catches.move("A");
+			catches.move("A");
+			catches.move("A");
+			catches.move("A");
 		}
 		if(keys[3] == true)
 		{
+			catches.move("D");
+			catches.move("D");
+			catches.move("D");
 			catches.move("D");
 		}
 		
