@@ -17,7 +17,8 @@ public class Background
 				image = ImageIO.read(new File("backgroundb.jpg"));			
 			}
 			if(x == 1){ 
-				image = ImageIO.read(new File("background.jpg"));			
+				image = ImageIO.read(new File("xavierisboosted.png"));
+				
 			}
 		}
 		catch(Exception e)

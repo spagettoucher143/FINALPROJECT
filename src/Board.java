@@ -185,15 +185,15 @@ public class Board extends Canvas implements KeyListener, Runnable
 		{
 			catches.move("A");
 			catches.move("A");
-			catches.move("A");
-			catches.move("A");
+//			catches.move("A");
+//			catches.move("A");
 		}
 		if(keys[3] == true)
 		{
 			catches.move("D");
 			catches.move("D");
-			catches.move("D");
-			catches.move("D");
+//			catches.move("D");
+//			catches.move("D");
 		}
 		
 		

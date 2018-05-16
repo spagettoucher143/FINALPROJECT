@@ -56,8 +56,8 @@ public class Fruit extends MovingThing
 	{
 		window.drawImage(image,getX(),getY(),null);
 		this.move("S");
-		this.move("S");
-		this.move("S");
+//		this.move("S");
+//		this.move("S");
 		
 	}
 
